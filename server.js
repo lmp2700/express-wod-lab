@@ -7,8 +7,9 @@ const Wod = require('./wod');
 
 app.use(bodyParser.urlencoded());
 app.use(methodOverride('_method'));
-// In the index route, create a form which will make a DELETE request to the server. Commit.
-// Create a DELETE route handler that will remove the specified object from the array and redirect to the index page. Commit.
+
+
+// Create a DELETE route handler that will remove the specified object from the array and redirect to the index page
 
 
 app.get('/workout', (req, res) => {
@@ -23,7 +24,7 @@ app.get('/workout/:id', (req, res) => {
 })
 
 app.delete('/workout/:id', (req, res) => {
-    Wod.splice(req.params.index, 1);
+    Wod.splice(req.params.id, 1);
     res.redirect('/workout')
 })
 
