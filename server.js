@@ -8,10 +8,6 @@ const Wod = require('./wod');
 app.use(bodyParser.urlencoded());
 app.use(methodOverride('_method'));
 
-
-// Create a DELETE route handler that will remove the specified object from the array and redirect to the index page
-
-
 app.get('/workout', (req, res) => {
     console.log('hi there')
     res.render('index.ejs', {workout: Wod})
@@ -23,10 +19,26 @@ app.get('/workout/:id', (req, res) => {
     })
 })
 
+app.get('/workout/:id/edit', (req, res) => {
+    res.render('edit.ejs', {
+        workout: Wod[req.params.id],
+        id: req.params.id
+    });
+    res.redirect('/workout');
+});
+
 app.delete('/workout/:id', (req, res) => {
     Wod.splice(req.params.id, 1);
-    res.redirect('/workout')
-})
+    res.redirect('/workout');
+});
+
+// An edit route/page that populates the forms with the data from the server. Commit.
+// A link to the edit route on the index page. Commit.
+// A PUT route that will change the element of your objects array, as specified by the index in the URL, to req.body
+// this page should redirect back to the index route, once this is completed
+// the form on the edit page should make a PUT request to this route
+
+
 
 app.listen(3000, () => {
     console.log('listening on port 3000')
@@ -34,9 +46,3 @@ app.listen(3000, () => {
 
 module.exports = app;
 
-{/* <form action="/workout method="POST">
-<li>Name: <input type="text" name="name"></li> 
-<li>Weight: <input type="text" name="weight"></li>
-<li>Type: <input type="text" name="type"></li>
-<li><input type="submit" name="" value="Delete"/></li>
-</form> */}
