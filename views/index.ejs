@@ -8,5 +8,11 @@
 </head>
 <body>
 
+<h2>Workouts</h2>
+<ul class="girlwods">
+<% for(i = 0; i < workout.length; i++) { %>
+   <li><%= workout[i].name %>, <%= workout[i].weight %>, <%= workout[i].type %></li>
+   <%  } %>
+</ul>
 </body>
 </html>
