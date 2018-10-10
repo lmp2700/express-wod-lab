@@ -1,0 +1,23 @@
+{
+  "name": "express_partner_lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmp2700/express-wod-lab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmp2700/express-wod-lab/issues"
+  },
+  "homepage": "https://github.com/lmp2700/express-wod-lab#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
