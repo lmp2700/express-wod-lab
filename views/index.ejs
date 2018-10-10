@@ -9,10 +9,16 @@
 <body>
 
 <h2>Workouts</h2>
+<form action="/workout" method="POST">
 <ul class="girlwods">
 <% for(i = 0; i < workout.length; i++) { %>
-   <li><%= workout[i].name %>, <%= workout[i].weight %>, <%= workout[i].type %></li>
-   <%  } %>
+   <li>Name: <%= workout[i].name %></li>
+   <li>Weight in pounds: <%= workout[i].weight %></li>
+   <li>Completed: <%= workout[i].type %></li>
+   <input type="submit" name="" value="Delete"/>
+   <% } %>
 </ul>
+</form>
+
 </body>
 </html>
