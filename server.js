@@ -19,20 +19,23 @@ app.get('/workout/:id', (req, res) => {
     })
 })
 
-app.get('/workout/:id/edit', (req, res) => {
-    res.render('edit.ejs', {
-        workout: Wod[req.params.id],
-        id: req.params.id
-    });
-    res.redirect('/workout');
-});
-
 app.delete('/workout/:id', (req, res) => {
     Wod.splice(req.params.id, 1);
     res.redirect('/workout');
 });
 
-// An edit route/page that populates the forms with the data from the server. Commit.
+app.get('/workout/:id/edit', (req, res) => {
+    res.render('edit.ejs', {
+        workout: Wod[req.params.id],
+        id: req.params.id
+    });
+});
+
+app.put('/workout/:id', (req, res) => {
+    Wod[req.params.id] = req.body;
+    res.redirect('/workout')
+});
+
 // A link to the edit route on the index page. Commit.
 // A PUT route that will change the element of your objects array, as specified by the index in the URL, to req.body
 // this page should redirect back to the index route, once this is completed

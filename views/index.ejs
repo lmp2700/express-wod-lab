@@ -17,10 +17,13 @@
    <li>Completed: <%= workout[i].type %></li>
    <form action="/workout/<%=i%>?_method=DELETE" method="POST">
    <input type="submit" value="delete">
- </form>
+   <form action="/workout/<%=i%>?_method=GET/edit" method="GET">
+   <input type="submit" value="edit">
    <% } %>
 </ul>
 </form>
+
+
 
 </body>
 </html>

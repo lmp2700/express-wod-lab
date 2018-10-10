@@ -10,14 +10,13 @@
 
 <h2>Edit the Girls...</h2>
 
-<form action="/workout/<%= id %>?_method=PUT">
+<form method="POST" action="/workout/<%=id%>?_method=PUT">
 Name: <input type="text" name="name" value="<%= workout.name %>"/><br/>
 Weight: <input type="number" name="weight" value="<%= workout.weight %>"/><br/>
 Type: <input type="text" name="type" value="<%= workout.type %>"/><br/>
-</form>
 <br/>
 <input type="submit" name="" value="Submit Changes"/>
-
+</form>
 
 
 </body>
